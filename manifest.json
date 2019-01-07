@@ -1,0 +1,46 @@
+{
+  "name": "Gatbsy.js Detector",
+  "version": "1.0.0",
+  "description": "Extension to detect sites built with Gatsby.js",
+  "manifest_version": 2,
+  "minimum_chrome_version": "49",
+  "author": "sibiraj-s",
+  "icons": {
+    "16": "images/gatsby-16x16.png",
+    "32": "images/gatsby-32x32.png",
+    "48": "images/gatsby-48x48.png",
+    "144": "images/gatsby-144x144.png",
+    "512": "images/gatsby-512x512.png"
+  },
+  "permissions": [
+    "file:///*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "browser_action": {
+    "default_title": "Gatbsy.js Detector",
+    "default_icon": {
+      "16": "images/gatsby-16x16-disabled.png",
+      "32": "images/gatsby-32x32-disabled.png",
+      "48": "images/gatsby-48x48-disabled.png"
+    },
+    "default_popup": "popups/gatsby-disabled.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content-script.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
