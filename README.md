@@ -1,4 +1,4 @@
-# gatsby.js-detector
+# gatsby.js-detector [![Build Status](https://travis-ci.com/sibiraj-s/gatsby.js-detector.svg?branch=master)](https://travis-ci.com/sibiraj-s/gatsby.js-detector)
 
 > Extension to detect sites built with Gatsby.js
 
@@ -9,10 +9,6 @@
 
 Opera Users can [enable Chrome extensions](https://addons.opera.com/extensions/details/download-chrome-extension-9/)
 and then install the [Chrome extension][chrome-marketplace]
-
-## Usage
-
-The extension icon will light up on a gatsby site.
 
 ## Development
 
