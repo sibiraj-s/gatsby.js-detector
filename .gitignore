@@ -156,3 +156,5 @@ $RECYCLE.BIN/
 
 ### Miscellaneous ###
 build/
+# web-ext build dir
+web-ext-artifacts/

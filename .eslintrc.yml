@@ -1,0 +1,7 @@
+extends: airbnb-base
+rules:
+  import/no-extraneous-dependencies: off
+env:
+  browser: true
+globals:
+  chrome: true

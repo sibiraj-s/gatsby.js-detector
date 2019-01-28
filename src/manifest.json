@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "description": "Extension to detect sites built with Gatsby.js",
   "manifest_version": 2,
-  "minimum_chrome_version": "49",
   "author": "sibiraj-s",
   "icons": {
-    "16": "images/gatsby-16x16.png",
-    "32": "images/gatsby-32x32.png",
-    "48": "images/gatsby-48x48.png",
-    "144": "images/gatsby-144x144.png",
-    "512": "images/gatsby-512x512.png"
+    "16": "images/production/gatsby-16x16.png",
+    "32": "images/production/gatsby-32x32.png",
+    "48": "images/production/gatsby-48x48.png",
+    "128": "images/production/gatsby-128x128.png",
+    "512": "images/production/gatsby-512x512.png"
   },
   "permissions": [
+    "activeTab",
     "file:///*",
     "http://*/*",
     "https://*/*"
@@ -20,11 +20,11 @@
   "browser_action": {
     "default_title": "Gatbsy.js Detector",
     "default_icon": {
-      "16": "images/gatsby-16x16-disabled.png",
-      "32": "images/gatsby-32x32-disabled.png",
-      "48": "images/gatsby-48x48-disabled.png"
+      "16": "images/disabled/gatsby-16x16.png",
+      "32": "images/disabled/gatsby-32x32.png",
+      "48": "images/disabled/gatsby-48x48.png"
     },
-    "default_popup": "popups/gatsby-disabled.html"
+    "default_popup": "popups/disabled.html"
   },
   "background": {
     "scripts": [
@@ -32,13 +32,14 @@
     ],
     "persistent": false
   },
+  "content_security_policy": "script-src 'self'; object-src 'self'; style-src 'self' 'unsafe-inline';",
   "content_scripts": [
     {
       "matches": [
         "<all_urls>"
       ],
       "js": [
-        "content-script.js"
+        "gatsbyDetector.js"
       ],
       "run_at": "document_end"
     }

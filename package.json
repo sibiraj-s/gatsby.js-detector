@@ -1,0 +1,46 @@
+{
+  "name": "gatsby.js-detector",
+  "version": "1.0.0",
+  "description": "Extension to detect sites built with Gatsby.js",
+  "author": "sibiraj-s",
+  "license": "MIT",
+  "private": true,
+  "repository": "https://github.com/sibiraj-s/gatsby.js-detector.git",
+  "bugs": "https://github.com/sibiraj-s/gatsby.js-detector/issues",
+  "homepage": "https://github.com/sibiraj-s/gatsby.js-detector#readme",
+  "engines": {
+    "node": "^10"
+  },
+  "keywords": [
+    "gatsby.js"
+  ],
+  "scripts": {
+    "webpack": "webpack",
+    "webpack:watch": "webpack --watch",
+    "prebuild": "npm run webpack && npm run lint:ext:firefox",
+    "build:ext:firefox": "web-ext build --source-dir build --overwrite-dest",
+    "build": "npm run build:ext:firefox",
+    "lint:ext:firefox": "web-ext lint --source-dir build",
+    "launch:ext:chrome": "node scripts/launch-ext-chrome.js",
+    "launch:ext:firefox": "web-ext run --source-dir build --browser-console",
+    "lint": "eslint . --ignore-path .gitignore",
+    "pretest": "npm run build",
+    "test": "npm run lint",
+    "prerelease": "node ./scripts/pre-release.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "chalk": "^2.4.2",
+    "clean-webpack-plugin": "^1.0.1",
+    "copy-webpack-plugin": "^4.6.0",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.15.0",
+    "puppeteer": "^1.11.0",
+    "web-ext": "^2.9.3",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
+  }
+}
