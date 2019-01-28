@@ -1,5 +1,6 @@
 {
   "name": "Gatbsy.js Detector",
+  "short_name": "Gatbsy.js Detector",
   "version": "1.1.0",
   "description": "Extension to detect sites built with Gatsby.js",
   "manifest_version": 2,
