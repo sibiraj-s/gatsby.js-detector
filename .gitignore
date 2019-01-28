@@ -156,5 +156,7 @@ $RECYCLE.BIN/
 
 ### Miscellaneous ###
 build/
+*.pem
+*.crx
 # web-ext build dir
 web-ext-artifacts/
