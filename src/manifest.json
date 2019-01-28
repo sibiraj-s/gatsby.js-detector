@@ -12,10 +12,7 @@
     "512": "images/production/gatsby-512x512.png"
   },
   "permissions": [
-    "activeTab",
-    "file:///*",
-    "http://*/*",
-    "https://*/*"
+    "activeTab"
   ],
   "browser_action": {
     "default_title": "Gatbsy.js Detector",
