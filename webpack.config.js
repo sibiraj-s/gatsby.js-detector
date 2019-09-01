@@ -1,7 +1,7 @@
 const path = require('path');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const WEBPACK_MODE = process.env.NODE_ENV || 'production';
 const isProduction = WEBPACK_MODE === 'production';
@@ -45,7 +45,7 @@ const webpackConfig = {
 };
 
 if (isProduction) {
-  webpackConfig.plugins.push(new CleanWebpackPlugin([OUT_DIR]));
+  webpackConfig.plugins.push(new CleanWebpackPlugin());
 }
 
 module.exports = webpackConfig;
