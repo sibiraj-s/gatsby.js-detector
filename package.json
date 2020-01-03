@@ -17,15 +17,14 @@
   "scripts": {
     "webpack": "webpack",
     "webpack:watch": "webpack --watch",
-    "prebuild": "npm run webpack && npm run lint:ext:firefox",
+    "prebuild": "npm run webpack",
     "build:ext:firefox": "web-ext build --source-dir build --overwrite-dest",
-    "build": "npm run build:ext:firefox",
+    "build": "npm run lint:ext:firefox && npm run build:ext:firefox",
     "lint:ext:firefox": "web-ext lint --source-dir build",
     "launch:ext:chrome": "node scripts/launch-ext-chrome.js",
     "launch:ext:firefox": "web-ext run --source-dir build --browser-console",
     "lint": "eslint . --ignore-path .gitignore",
     "pretest": "npm run build",
-    "test": "npm run lint",
     "prerelease": "node ./scripts/pre-release.js"
   },
   "devDependencies": {

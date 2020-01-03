@@ -1,4 +1,4 @@
-# gatsby.js-detector [![Build Status](https://travis-ci.com/sibiraj-s/gatsby.js-detector.svg?branch=master)](https://travis-ci.com/sibiraj-s/gatsby.js-detector)
+# gatsby.js-detector [![Tests](https://github.com/sibiraj-s/gatsby.js-detector/workflows/Tests/badge.svg)](https://github.com/sibiraj-s/gatsby.js-detector/actions)
 
 > Extension to detect sites built with Gatsby.js
 
