@@ -12,6 +12,7 @@ const webpackConfig = {
   context: SRC_DIR,
   mode: WEBPACK_MODE,
   bail: isProduction,
+  devtool: isProduction ? 'source-map' : 'cheap-source-map',
   entry: {
     background: './background',
     gatsbyDetector: './gatsbyDetector',
