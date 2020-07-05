@@ -36,11 +36,13 @@ const webpackConfig = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: './images', to: 'images' },
-      { from: './popups', to: 'popups' },
-      './manifest.json',
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './images', to: 'images' },
+        { from: './popups', to: 'popups' },
+        './manifest.json',
+      ],
+    }),
   ],
 };
 
