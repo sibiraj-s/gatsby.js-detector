@@ -2,6 +2,7 @@ const path = require('path');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MergeJsonPlugin = require('merge-json-webpack-plugin');
 
 const WEBPACK_MODE = process.env.NODE_ENV || 'production';
 const isProduction = WEBPACK_MODE === 'production';
@@ -12,7 +13,6 @@ const webpackConfig = {
   context: SRC_DIR,
   mode: WEBPACK_MODE,
   bail: isProduction,
-  devtool: isProduction ? 'source-map' : 'cheap-source-map',
   entry: {
     background: './background',
     gatsbyDetector: './gatsbyDetector',
@@ -41,8 +41,17 @@ const webpackConfig = {
       patterns: [
         { from: './images', to: 'images' },
         { from: './popups', to: 'popups' },
-        './manifest.json',
       ],
+    }),
+    new MergeJsonPlugin({
+      minify: false,
+      group: [{
+        files: [
+          'manifest.json',
+          `${isProduction ? 'prod' : 'dev'}.manifest.json`,
+        ],
+        to: 'manifest.json',
+      }],
     }),
   ],
 };

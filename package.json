@@ -39,6 +39,7 @@
     "eslint-config-pegasus": "^1.0.0",
     "eslint-plugin-import": "^2.22.0",
     "husky": "^4.2.5",
+    "merge-json-webpack-plugin": "^1.0.0",
     "puppeteer": "^5.0.0",
     "web-ext": "^4.3.0",
     "webpack": "^4.43.0",
