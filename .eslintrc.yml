@@ -1,9 +1,6 @@
 extends:
-  - airbnb-base
   - pegasus
-
-rules:
-  import/no-extraneous-dependencies: off
+  - pegasus/node
 
 env:
   browser: true

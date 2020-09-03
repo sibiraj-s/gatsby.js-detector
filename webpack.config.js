@@ -25,8 +25,8 @@ const webpackConfig = {
   module: {
     rules: [
       {
-        test: /\.(m)?js(x)?$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.(?:m)?js(?:x)?$/,
+        exclude: /(?:node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {
