@@ -24,7 +24,7 @@
     "launch:ext:chrome": "node scripts/launch-ext-chrome.js",
     "launch:ext:firefox": "web-ext run --source-dir build --browser-console",
     "lint": "eslint . --ignore-path .gitignore",
-    "pretest": "npm run build",
+    "test": "npm run build",
     "prerelease": "node ./scripts/pre-release.js"
   },
   "devDependencies": {
