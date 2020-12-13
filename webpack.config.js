@@ -54,6 +54,10 @@ const webpackConfig = {
       }],
     }),
   ],
+  optimization: {
+    moduleIds: 'deterministic',
+    chunkIds: 'deterministic',
+  },
 };
 
 if (isProduction) {
