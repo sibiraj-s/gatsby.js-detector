@@ -1,6 +1,6 @@
 {
   "name": "gatsby.js-detector",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Extension to detect sites built with Gatsby.js",
   "author": "sibiraj-s",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "gatsby.js"
   ],
   "scripts": {
-    "webpack": "webpack",
+    "webpack": "NODE_ENV=production webpack",
     "webpack:watch": "webpack --watch",
     "prebuild": "npm run webpack",
     "build:ext:firefox": "web-ext build --source-dir build --overwrite-dest",
@@ -24,8 +24,7 @@
     "launch:ext:chrome": "node scripts/launch-ext-chrome.js",
     "launch:ext:firefox": "web-ext run --source-dir build --browser-console",
     "lint": "eslint . --ignore-path .gitignore",
-    "test": "npm run build",
-    "prerelease": "node ./scripts/pre-release.js"
+    "test": "npm run build"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

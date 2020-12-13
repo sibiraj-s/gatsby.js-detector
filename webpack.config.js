@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MergeJsonPlugin = require('merge-json-webpack-plugin');
 
+const { version } = require('./package.json');
 const WEBPACK_MODE = process.env.NODE_ENV || 'production';
 const isProduction = WEBPACK_MODE === 'production';
 const SRC_DIR = path.resolve(__dirname, 'src');
@@ -51,6 +52,7 @@ const webpackConfig = {
           `${isProduction ? 'prod' : 'dev'}.manifest.json`,
         ],
         to: 'manifest.json',
+        transform: (manifest) => ({ version, ...manifest }),
       }],
     }),
   ],
