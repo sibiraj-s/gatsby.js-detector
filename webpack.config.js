@@ -1,7 +1,6 @@
-const path = require('path');
+const path = require('node:path');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MergeJsonPlugin = require('merge-json-webpack-plugin');
 
 const { version } = require('./package.json');
@@ -22,6 +21,7 @@ const webpackConfig = {
   },
   output: {
     path: OUT_DIR,
+    clean: true,
   },
   module: {
     rules: [
@@ -61,9 +61,5 @@ const webpackConfig = {
     chunkIds: 'deterministic',
   },
 };
-
-if (isProduction) {
-  webpackConfig.plugins.push(new CleanWebpackPlugin());
-}
 
 module.exports = webpackConfig;
