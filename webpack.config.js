@@ -46,7 +46,7 @@ const webpackConfig = {
     }),
     new MergeJsonPlugin({
       minify: false,
-      group: [{
+      groups: [{
         files: [
           'manifest.json',
           `${isProduction ? 'prod' : 'dev'}.manifest.json`,
