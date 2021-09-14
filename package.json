@@ -29,8 +29,8 @@
     "prepare": "is-ci || husky install"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "babel-loader": "^8.2.2",
@@ -38,12 +38,12 @@
     "copy-webpack-plugin": "^9.0.1",
     "eslint": "^7.32.0",
     "eslint-config-pegasus": "^2.1.0",
-    "husky": "^7.0.1",
+    "husky": "^7.0.2",
     "is-ci": "^3.0.0",
     "merge-json-webpack-plugin": "^6.0.0",
     "puppeteer": "^10.2.0",
-    "web-ext": "^6.3.0",
-    "webpack": "^5.51.1",
+    "web-ext": "^6.4.0",
+    "webpack": "^5.52.1",
     "webpack-cli": "^4.8.0"
   }
 }
