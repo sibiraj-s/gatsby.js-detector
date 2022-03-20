@@ -16,16 +16,16 @@
     "gatsby.js"
   ],
   "scripts": {
-    "webpack": "webpack",
-    "webpack:watch": "webpack --watch",
-    "prebuild": "npm run webpack",
+    "build": "webpack --mode=production --node-env=production",
+    "dev": "webpack --watch --mode=development --node-env=development",
+    "prepackage": "npm run build && npm run lint:ext:firefox",
     "build:ext:firefox": "web-ext build --source-dir build --overwrite-dest",
-    "build": "npm run lint:ext:firefox && npm run build:ext:firefox",
+    "package": "npm run build:ext:firefox",
     "lint:ext:firefox": "web-ext lint --source-dir build",
     "launch:ext:chrome": "node scripts/launch-ext-chrome.js",
     "launch:ext:firefox": "web-ext run --source-dir build --browser-console",
+    "test": "npm run package",
     "lint": "eslint . --ignore-path .gitignore",
-    "test": "npm run build",
     "prepare": "is-ci || husky install"
   },
   "devDependencies": {

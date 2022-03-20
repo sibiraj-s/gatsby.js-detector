@@ -12,7 +12,7 @@ and then install the [Chrome extension][chrome-marketplace]
 
 ## Development
 
-Run `npm run webpack:watch` to watch script changes
+Run `npm run dev` to watch script changes
 
 To launch extension in Chrome. The launched Chrome instance is controlled by [puppeteer]
 

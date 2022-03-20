@@ -1,40 +1,34 @@
-const path = require('node:path');
+// @ts-check
+/** @typedef {import('webpack').Configuration} WebpackConfig */
 
+const path = require('node:path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MergeJsonPlugin = require('merge-json-webpack-plugin');
 
 const { version } = require('./package.json');
-const WEBPACK_MODE = process.env.NODE_ENV || 'production';
-const isProduction = WEBPACK_MODE === 'production';
-const SRC_DIR = path.resolve(__dirname, 'src');
-const OUT_DIR = path.resolve(__dirname, 'build');
+const isProduction = process.env.NODE_ENV === 'production';
 
-const webpackConfig = {
-  context: SRC_DIR,
-  mode: WEBPACK_MODE,
+/** @type WebpackConfig */
+const config = {
+  context: path.resolve(__dirname, 'src'),
   bail: isProduction,
   devtool: 'source-map',
   entry: {
-    background: './background',
-    gatsbyDetector: './gatsbyDetector',
-    popup: './popup',
-    shared: './shared',
+    background: './background.js',
+    gatsbyDetector: './gatsbyDetector.js',
+    popup: './popup.js',
+    shared: './shared.js',
   },
   output: {
-    path: OUT_DIR,
+    path: path.resolve(__dirname, 'build'),
     clean: true,
   },
   module: {
     rules: [
       {
-        test: /\.(?:m)?js(?:x)?$/,
-        exclude: /(?:node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
       },
     ],
   },
@@ -63,4 +57,4 @@ const webpackConfig = {
   },
 };
 
-module.exports = webpackConfig;
+module.exports = config;
