@@ -24,8 +24,8 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
       ? document.querySelector('meta[name=generator]').getAttribute('content')
       : undefined;
 
-    // from https://github.com/sindresorhus/semver-regex/blob/master/index.js
-    const semverRegexp = /\bv?(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[\da-z-]+(?:\.[\da-z-]+)*)?(?:\+[\da-z-]+(?:\.[\da-z-]+)*)?\b/gi;
+    // from https://github.com/sindresorhus/semver-regex/blob/main/index.js
+    const semverRegexp = /(?:(?<=^v?|\sv?)(?:(?:0|[1-9]\d{0,9})\.){2}(?:0|[1-9]\d{0,9})(?:-(?:0|[1-9]\d*?|[\da-z-]*?[a-z-][\da-z-]*?){0,100}(?:\.(?:0|[1-9]\d*?|[\da-z-]*?[a-z-][\da-z-]*?))*?){0,100}(?:\+[\da-z-]+?(?:\.[\da-z-]+?)*?){0,100}\b){1,200}/gi;
 
     const [gatsbyVersion] = semverRegexp.exec(gatsbyGeneratorInfo);
     const gatsbyInfo = {
