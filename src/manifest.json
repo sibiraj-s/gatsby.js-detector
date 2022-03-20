@@ -2,7 +2,7 @@
   "name": "Gatbsy.js Detector",
   "short_name": "Gatbsy.js Detector",
   "description": "Extension to detect sites built with Gatsby.js",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "author": "sibiraj-s",
   "icons": {
     "16": "images/production/gatsby-16x16.png",
@@ -14,7 +14,10 @@
   "permissions": [
     "activeTab"
   ],
-  "browser_action": {
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "action": {
     "default_title": "Gatbsy.js Detector",
     "default_icon": {
       "16": "images/disabled/gatsby-16x16.png",
@@ -24,10 +27,7 @@
     "default_popup": "popups/disabled.html"
   },
   "background": {
-    "scripts": [
-      "background.js"
-    ],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {

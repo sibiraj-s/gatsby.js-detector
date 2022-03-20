@@ -3,7 +3,7 @@ chrome.runtime.onMessage.addListener((request, sender) => {
   if (request.from === 'gatsbyDetector' && request.subject === 'showPageAction') {
     const tabId = sender.tab.id;
 
-    chrome.browserAction.setIcon({
+    chrome.action.setIcon({
       tabId,
       path: {
         16: `images/${request.MODE}/gatsby-16x16.png`,
@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener((request, sender) => {
       },
     });
 
-    chrome.browserAction.setPopup({
+    chrome.action.setPopup({
       tabId,
       popup: `popups/${request.MODE}.html`,
     });

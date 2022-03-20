@@ -18,6 +18,7 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
   if (request.from === 'popup' && request.subject === 'DOMInfo' && sender.id) {
     // check if meta tag with generator info exists
     const isGeneratorInfoExistsOnMeta = Boolean(document.querySelector('meta[name=generator]'));
+
     // get Gatsby.js version from meta tag
     const gatsbyGeneratorInfo = isGeneratorInfoExistsOnMeta
       ? document.querySelector('meta[name=generator]').getAttribute('content')
