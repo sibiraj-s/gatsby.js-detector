@@ -10,7 +10,7 @@
   "homepage": "https://github.com/sibiraj-s/gatsby.js-detector#readme",
   "engines": {
     "node": ">=16.0.0",
-    "npm": ">=8.5.0"
+    "npm": ">=8.3.0"
   },
   "keywords": [
     "gatsby.js"
