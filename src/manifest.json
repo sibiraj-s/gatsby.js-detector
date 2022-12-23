@@ -17,11 +17,6 @@
   "host_permissions": [
     "*://*/*"
   ],
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "{9f049a0a-8aae-44ac-9e54-b4068b445e6c}"
-    }
-  },
   "action": {
     "default_title": "Gatbsy.js Detector",
     "default_icon": {
@@ -30,9 +25,6 @@
       "48": "images/disabled/gatsby-48x48.png"
     },
     "default_popup": "popups/disabled.html"
-  },
-  "background": {
-    "service_worker": "background.js"
   },
   "content_scripts": [
     {

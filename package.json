@@ -18,14 +18,16 @@
     "firefox-extension"
   ],
   "scripts": {
-    "build": "webpack --mode=production --node-env=production",
+    "build:chrome": "BROWSER_TARGET=chrome webpack --mode=production --node-env=production",
+    "build:firefox": "BROWSER_TARGET=firefox webpack --mode=production --node-env=production",
+    "build": "npm run build:chrome && npm run build:firefox",
     "dev": "webpack --watch --mode=development --node-env=development",
     "prepackage": "npm run build && npm run lint:ext:firefox",
-    "build:ext:firefox": "web-ext build --source-dir build --overwrite-dest",
+    "build:ext:firefox": "web-ext build --source-dir dist/firefox --overwrite-dest",
     "package": "npm run build:ext:firefox",
-    "lint:ext:firefox": "web-ext lint --source-dir build",
+    "lint:ext:firefox": "web-ext lint --source-dir dist/firefox",
     "launch:ext:chrome": "node scripts/launch-ext-chrome.js",
-    "launch:ext:firefox": "web-ext run --source-dir build --browser-console",
+    "launch:ext:firefox": "web-ext run --source-dir dist/firefox --browser-console",
     "test": "npm run package",
     "lint": "eslint . --ignore-path .gitignore",
     "prepare": "is-ci || husky install"

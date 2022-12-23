@@ -155,6 +155,7 @@ $RECYCLE.BIN/
 *.lnk
 
 ### Miscellaneous ###
+dist/
 build/
 *.pem
 *.crx

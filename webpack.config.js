@@ -7,6 +7,7 @@ const MergeJsonPlugin = require('merge-json-webpack-plugin');
 
 const { version } = require('./package.json');
 const isProduction = process.env.NODE_ENV === 'production';
+const browserTarget = process.env.BROWSER_TARGET ?? 'chrome';
 
 /** @type WebpackConfig */
 const config = {
@@ -20,7 +21,7 @@ const config = {
     shared: './shared.js',
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist', browserTarget),
     clean: true,
   },
   module: {
@@ -44,6 +45,7 @@ const config = {
       groups: [{
         files: [
           'manifest.json',
+          `${browserTarget}.manifest.json`,
           `${isProduction ? 'prod' : 'dev'}.manifest.json`,
         ],
         to: 'manifest.json',
