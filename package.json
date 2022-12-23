@@ -13,7 +13,9 @@
     "npm": ">=8.3.0"
   },
   "keywords": [
-    "gatsby.js"
+    "gatsby.js",
+    "chrome-extension",
+    "firefox-extension"
   ],
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
