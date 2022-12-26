@@ -11,9 +11,6 @@
     "128": "images/production/gatsby-128x128.png",
     "512": "images/production/gatsby-512x512.png"
   },
-  "permissions": [
-    "activeTab"
-  ],
   "host_permissions": [
     "*://*/*"
   ],
