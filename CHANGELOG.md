@@ -3,6 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 > **Tags**
+>
 > - Features
 > - Bug Fixes
 > - Performance Improvements
@@ -12,6 +13,18 @@ All notable changes to this project will be documented in this file.
 > - Documentation
 > - Internal
 > - Unreleased
+
+## v2.0.0 (2022-12-26)
+
+#### Enhancements
+
+- remove unwanted permissions `activeTab` ([ca12b13](https://github.com/sibiraj-s/gatsby.js-detector/commit/ca12b13))
+- remove unwanted `host_permissions` ([7e45b45](https://github.com/sibiraj-s/gatsby.js-detector/commit/7e45b45))
+
+#### Breaking Changes
+
+- Migrated to manifest v3 ([d135a2c](https://github.com/sibiraj-s/gatsby.js-detector/commit/d135a2c)),
+  ([7e45b45](https://github.com/sibiraj-s/gatsby.js-detector/commit/7e45b45))
 
 ## v1.1.1 (2019-01-30)
 
