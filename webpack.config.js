@@ -1,17 +1,25 @@
 // @ts-check
 /** @typedef {import('webpack').Configuration} WebpackConfig */
 
-const path = require('node:path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MergeJsonPlugin = require('merge-json-webpack-plugin');
+import path from 'node:path';
+import fs from 'node:fs/promises';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import MergeJsonPlugin from 'merge-json-webpack-plugin';
 
-const { version } = require('./package.json');
 const isProduction = process.env.NODE_ENV === 'production';
 const browserTarget = process.env.BROWSER_TARGET ?? 'chrome';
 
+const readPackageJson = async () => {
+  const filePath = path.resolve(import.meta.dirname, 'package.json');
+  const packageJson = await fs.readFile(filePath, 'utf8');
+  return JSON.parse(packageJson);
+};
+
+const pkgJson = await readPackageJson();
+
 /** @type WebpackConfig */
 const config = {
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(import.meta.dirname, 'src'),
   bail: isProduction,
   devtool: 'source-map',
   entry: {
@@ -21,7 +29,7 @@ const config = {
     shared: './shared.js',
   },
   output: {
-    path: path.resolve(__dirname, 'dist', browserTarget),
+    path: path.resolve(import.meta.dirname, 'dist', browserTarget),
     clean: true,
   },
   module: {
@@ -49,7 +57,7 @@ const config = {
           `${isProduction ? 'prod' : 'dev'}.manifest.json`,
         ],
         to: 'manifest.json',
-        transform: (manifest) => ({ version, ...manifest }),
+        transform: (manifest) => ({ version: pkgJson.version, ...manifest }),
       }],
     }),
   ],
@@ -59,4 +67,4 @@ const config = {
   },
 };
 
-module.exports = config;
+export default config;

@@ -1,9 +1,0 @@
-extends:
-  - pegasus
-  - pegasus/node
-
-env:
-  browser: true
-
-globals:
-  chrome: true
