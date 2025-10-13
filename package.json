@@ -47,7 +47,7 @@
     "lint-staged": "^15.5.0",
     "merge-json-webpack-plugin": "^6.2.0",
     "puppeteer": "^24.6.1",
-    "web-ext": "^8.5.0",
+    "web-ext": "^8.10.0",
     "webpack": "^5.99.5",
     "webpack-cli": "^6.0.1"
   }
