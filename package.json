@@ -34,11 +34,11 @@
     "prepare": "is-ci || husky"
   },
   "devDependencies": {
-    "@babel/core": "^7.28.4",
-    "@babel/preset-env": "^7.28.3",
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
-    "babel-loader": "^10.0.0",
+    "babel-loader": "^10.1.1",
     "copy-webpack-plugin": "^14.0.0",
     "eslint": "^9.37.0",
     "eslint-config-pegasus": "^6.0.2",
