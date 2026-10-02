@@ -19,10 +19,10 @@
     "firefox-extension"
   ],
   "scripts": {
-    "build:chrome": "BROWSER_TARGET=chrome webpack --mode=production --node-env=production",
-    "build:firefox": "BROWSER_TARGET=firefox webpack --mode=production --node-env=production",
+    "build:chrome": "BROWSER_TARGET=chrome webpack --mode=production --config-node-env=production",
+    "build:firefox": "BROWSER_TARGET=firefox webpack --mode=production --config-node-env=production",
     "build": "npm run build:chrome && npm run build:firefox",
-    "dev": "webpack --watch --mode=development --node-env=development",
+    "dev": "webpack --watch --mode=development --config-node-env=development",
     "prepackage": "npm run build && npm run lint:ext:firefox",
     "build:ext:firefox": "web-ext build --source-dir dist/firefox --overwrite-dest",
     "package": "npm run build:ext:firefox",
@@ -30,25 +30,24 @@
     "launch:ext:chrome": "node scripts/launch-ext-chrome.js",
     "launch:ext:firefox": "web-ext run --source-dir dist/firefox --browser-console",
     "test": "npm run package",
-    "lint": "eslint .",
+    "lint": "oxlint .",
     "prepare": "is-ci || husky"
   },
   "devDependencies": {
-    "@babel/core": "^8.0.1",
-    "@babel/preset-env": "^8.0.2",
-    "@commitlint/cli": "^20.1.0",
-    "@commitlint/config-conventional": "^20.0.0",
+    "@babel/core": "^8.0.6",
+    "@babel/preset-env": "^8.0.6",
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
     "babel-loader": "^10.1.1",
     "copy-webpack-plugin": "^14.0.0",
-    "eslint": "^9.37.0",
-    "eslint-config-pegasus": "^6.0.2",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
-    "lint-staged": "^16.2.4",
+    "lint-staged": "^17.6.0",
     "merge-json-webpack-plugin": "^6.2.1",
-    "puppeteer": "^24.24.0",
+    "oxlint": "^1.86.0",
+    "puppeteer": "^25.12.0",
     "web-ext": "^10.7.0",
-    "webpack": "^5.105.4",
-    "webpack-cli": "^6.0.1"
+    "webpack": "^5.111.1",
+    "webpack-cli": "^7.2.3"
   }
 }
